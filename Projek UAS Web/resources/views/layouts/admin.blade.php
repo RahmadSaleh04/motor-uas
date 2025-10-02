@@ -51,6 +51,7 @@
                     {{ Auth::user()->name }}
                 </a>
                 <div class="dropdown-menu fade-up m-0">
+                    <a href="{{ route('profile.edit') }}" class="dropdown-item">Edit Profile</a>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button type="submit" class="dropdown-item">Logout</button>

@@ -61,45 +61,6 @@
         </div>
     </div>
 
-    <!-- Form Perbarui Kata Sandi -->
-    <div class="card mb-4">
-        <div class="card-header">
-            <h5>Perbarui Kata Sandi</h5>
-        </div>
-        <div class="card-body">
-            <form method="POST" action="{{ route('profile.updatePassword') }}">
-                @csrf
-                @method('PATCH')
-
-                <div class="mb-3">
-                    <label for="current_password" class="form-label">Kata Sandi Saat Ini</label>
-                    <input type="password" name="current_password" id="current_password"
-                        class="form-control @error('current_password') is-invalid @enderror" required>
-                    @error('current_password')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="mb-3">
-                    <label for="password" class="form-label">Kata Sandi Baru</label>
-                    <input type="password" name="password" id="password"
-                        class="form-control @error('password') is-invalid @enderror" required>
-                    @error('password')
-                    <div class="invalid-feedback">{{ $message }}</div>
-                    @enderror
-                </div>
-
-                <div class="mb-3">
-                    <label for="password_confirmation" class="form-label">Konfirmasi Kata Sandi Baru</label>
-                    <input type="password" name="password_confirmation" id="password_confirmation"
-                        class="form-control" required>
-                </div>
-
-                <button type="submit" class="btn btn-warning">Perbarui Kata Sandi</button>
-            </form>
-        </div>
-    </div>
-
     <!-- Form Hapus Akun -->
     <div class="card mb-4">
         <div class="card-header">
