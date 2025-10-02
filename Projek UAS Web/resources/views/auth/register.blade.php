@@ -36,6 +36,18 @@
             <label for="password_confirmation" class="form-label">Confirm Password</label>
             <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" required>
         </div>
+        <div class="mb-3">
+            <label for="pin" :value="__('PIN')">PIN</label>
+            <input id="pin" type="password"
+                            name="pin"
+                            required autocomplete="new-pin" />
+        </div>
+        <div class="mb-3">
+            <label for="pin_confirmation" :value="__('Confirm PIN')">PIN Confirmation</label>
+            <input id="pin_confirmation"
+                            type="password"
+                            name="pin_confirmation" required />
+        </div>
         <button type="submit" class="btn btn-primary w-100">Register</button>
         <div class="text-center mt-3">
             <a href="{{ route('login') }}">Sudah punya akun? Login</a>

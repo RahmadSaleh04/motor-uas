@@ -34,14 +34,16 @@ class RegisteredUserController extends Controller
             'email' => ['required', 'string', 'lowercase', 'email', 'max:255', 'unique:'.User::class],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
             'phone' => ['required', 'string', 'max:15', 'unique:users'],
+            'pin' => ['required', 'numeric', 'confirmed', 'min:4']
         ]);
 
         // Create a new user
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
-            'password' => Hash::make($request->password),
+            'password' => $request->password,
             'phone' => $request->phone,
+            'pin' => $request->pin,
         ]);
 
         // Trigger the registration event (optional if you use email verification)
